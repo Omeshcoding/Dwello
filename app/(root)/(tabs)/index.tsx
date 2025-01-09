@@ -12,6 +12,9 @@ const Index = () => {
         alignItems: 'center',
       }}
     >
+      <Text className="font-bold text-2xl my-10">
+        Welcome to React Native Project
+      </Text>
       <Link href="/sign_in">Sign In</Link>
       <Link href="/explore">Explore</Link>
       <Link href="/profile">Profile</Link>
