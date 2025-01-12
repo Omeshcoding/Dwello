@@ -11,35 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import icons from '@/constants/icons';
 import images from '@/constants/images';
 import { settings } from '@/constants/data';
-
-interface SettingItemsProp {
-  icon: ImageSourcePropType;
-  title: string;
-  onPress?: () => void;
-  textStyle?: string;
-  showArrow?: boolean;
-}
-
-const SettingsItems = ({
-  icon,
-  title,
-  onPress,
-  textStyle,
-  showArrow = true,
-}: SettingItemsProp) => {
-  return (
-    <Pressable
-      onPress={onPress}
-      className="flex flex-row items-center justify-between py-3"
-    >
-      <View className="flex flex-row items-center gap-3">
-        <Image source={icon} className="size-6" />
-        <Text className="text-lg font-rebik-medium">{title}</Text>
-      </View>
-      {showArrow && <Image source={icons.rightArrow} className="size-5" />}
-    </Pressable>
-  );
-};
+import SettingsItems from '@/components/SettingsItems';
 
 const Profile = () => {
   const handleLogout = () => {
