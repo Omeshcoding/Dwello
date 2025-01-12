@@ -10,6 +10,7 @@ import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import icons from '@/constants/icons';
 import images from '@/constants/images';
+import { settings } from '@/constants/data';
 
 interface SettingItemsProp {
   icon: ImageSourcePropType;
@@ -41,8 +42,11 @@ const SettingsItems = ({
 };
 
 const Profile = () => {
+  const handleLogout = () => {
+    console.log('Logging out....');
+  };
   return (
-    <SafeAreaView className="h-full bg-white">
+    <SafeAreaView className="h-full bg-white pt-2">
       <ScrollView
         showsVerticalScrollIndicator={true}
         contentContainerClassName="pb-32 px-7"
@@ -66,6 +70,20 @@ const Profile = () => {
         <View>
           <SettingsItems icon={icons.calendar} title="My Booking" />
           <SettingsItems icon={icons.wallet} title="Payments" />
+        </View>
+        <View className="flex flex-col mt-5 border-t pt-5 border-primary-200">
+          {settings.slice(2).map((item, index) => (
+            <SettingsItems key={index} {...item} />
+          ))}
+        </View>
+        <View className="flex flex-col mt-5 border-t pt-5 border-primary-200">
+          <SettingsItems
+            icon={icons.logout}
+            title="Logout"
+            textStyle="danger"
+            showArrow={false}
+            onPress={handleLogout}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
