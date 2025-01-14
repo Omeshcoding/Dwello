@@ -59,6 +59,7 @@ const Index = () => {
                 </Text>
               </Pressable>
             </View>
+            <Filters />
             <View className="flex flex-row gap-5  w-full">
               <Card />
               <Card />
