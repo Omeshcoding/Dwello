@@ -20,7 +20,7 @@ const Profile = () => {
   return (
     <SafeAreaView className="h-full bg-white pt-2">
       <ScrollView
-        showsVerticalScrollIndicator={true}
+        showsVerticalScrollIndicator={false}
         contentContainerClassName="pb-32 px-7"
       >
         <View className="flex flex-row  justify-between items-center">
